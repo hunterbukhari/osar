@@ -84,9 +84,9 @@ function showProducts(family) {
   ul.innerHTML = '';
   family.products.forEach(p => {
     const li = document.createElement('li');
-    li.innerHTML = \`
-      <span>\${p.name}</span> - <span>\${p.price} ر.س</span>
-      <button onclick="alert('تم إضافة \${p.name} إلى السلة')">إضافة للسلة</button>\`;
+    li.innerHTML = `
+      <span>${p.name}</span> - <span>${p.price} ر.س</span>
+      <button onclick="alert('تم إضافة ${p.name} إلى السلة')">إضافة للسلة</button>`;
     ul.appendChild(li);
   });
 }

@@ -5,7 +5,7 @@ let map, markersLayer;
 window.onload = init;
 
 function init() {
-  fetch('families.json')
+  fetch('./families.json')
     .then(res => res.json())
     .then(data => {
       families = data;

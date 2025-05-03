@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مطبخك المنزلي - أسر منتجة</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      background: #fdf7f0;
+      color: #3e2c1c;
+    }
+    header {
+      background: #8b4513;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    header img {
+      height: 60px;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    .nav button {
+      background: white;
+      color: #8b4513;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .families {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .family-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .family-card:hover {
+      transform: scale(1.03);
+    }
+    .family-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .family-card h3 {
+      margin: 0;
+      padding: 1rem;
+      font-size: 1.2rem;
+      background: #fff8f1;
+    }
+    .cart {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #8b4513;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="osar.png" alt="شعار أسر منتجة">
+    <h1>منصة مطبخك المنزلي</h1>
+    <div class="nav">
+      <button onclick="login()">تسجيل الدخول</button>
+      <button onclick="showAccount()">الحساب</button>
+      <button onclick="showOrders()">الطلبات</button>
+      <button onclick="showOffers()">العروض</button>
+      <button onclick="support()">الدعم</button>
+    </div>
+  </header>
+
+  <div class="families" id="families"></div>
+
+  <div class="cart" onclick="goToCart()">سلة التسوق 🛒</div>
+
+  <script>
+    const families = [
+      { id: 1, name: 'أسرة أم عبدالله', image: 'https://source.unsplash.com/400x300/?arabic-food,1', page: 'osra1.html' },
+      { id: 2, name: 'أسرة أبو وليد', image: 'https://source.unsplash.com/400x300/?home-cooked,2', page: 'osra2.html' },
+      { id: 3, name: 'أسرة أم ناصر', image: 'https://source.unsplash.com/400x300/?traditional-food,3', page: 'osra3.html' },
+      { id: 4, name: 'أسرة فاطمة', image: 'https://source.unsplash.com/400x300/?saudi-food,4', page: 'osra4.html' },
+      { id: 5, name: 'أسرة أبو سعود', image: 'https://source.unsplash.com/400x300/?homemade-meal,5', page: 'osra5.html' },
+      { id: 6, name: 'أسرة أم خالد', image: 'https://source.unsplash.com/400x300/?arabian-dish,6', page: 'osra6.html' }
+    ];
+
+    const container = document.getElementById('families');
+
+    families.forEach(family => {
+      const card = document.createElement('div');
+      card.className = 'family-card';
+      card.innerHTML = `
+        <img src="${family.image}" alt="${family.name}">
+        <h3>${family.name}</h3>
+      `;
+      card.onclick = () => {
+        window.location.href = family.page;
+      };
+      container.appendChild(card);
+    });
+
+    function goToCart() {
+      alert('سيتم فتح صفحة السلة لاحقاً...');
+    }
+
+    function login() {
+      alert('واجهة تسجيل الدخول ستُضاف قريبًا.');
+    }
+
+    function showAccount() {
+      alert('صفحة الحساب الشخصي تحت التطوير.');
+    }
+
+    function showOrders() {
+      alert('صفحة الطلبات قيد الإنشاء.');
+    }
+
+    function showOffers() {
+      alert('سيتم عرض العروض الخاصة هنا.');
+    }
+
+    function support() {
+      alert('تواصل مع الدعم الفني قريبًا.');
+    }
+  </script>
+
+</body>
+</html>

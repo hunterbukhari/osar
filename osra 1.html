@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة الأسرة</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      background: #fdf7f0;
+      color: #3e2c1c;
+    }
+    header {
+      background: #8b4513;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    .product-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .product-card .info {
+      padding: 1rem;
+    }
+    .product-card .info h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+    .product-card .info p {
+      margin: 0.3rem 0;
+    }
+    .add-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: #8b4513;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>أسرة أم عبدالله</h1>
+  </header>
+
+  <div class="products">
+    <div class="product-card">
+      <img src="https://source.unsplash.com/400x300/?kabsa" alt="كبسة">
+      <div class="info">
+        <h3>كبسة دجاج</h3>
+        <p>السعر: 35 ريال</p>
+        <button class="add-btn">أضف إلى السلة</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://source.unsplash.com/400x300/?samboosa" alt="سمبوسة">
+      <div class="info">
+        <h3>سمبوسة لحم</h3>
+        <p>السعر: 20 ريال</p>
+        <button class="add-btn">أضف إلى السلة</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://source.unsplash.com/400x300/?rice,meat" alt="رز ولحم">
+      <div class="info">
+        <h3>رز باللحم</h3>
+        <p>السعر: 45 ريال</p>
+        <button class="add-btn">أضف إلى السلة</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
